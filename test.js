@@ -1,6 +1,13 @@
+const readlineSync = require("readline-sync");
 
-function rand10(){
-  return Math.floor(Math.random() * 11);
+let n = new Number(readlineSync.question("Enter a number: "));
+
+function multiRand(n){
+  let array = []
+  for (i = 0; i < n; i++) {
+  array.push(Math.floor(Math.random() * 11));
+}
+  return array;
 }
 
-console.log(rand10());
+console.log(multiRand(n));
