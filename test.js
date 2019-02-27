@@ -1,10 +1,6 @@
-const readlineSync = require("readline-sync");
 
-let width = new Number(readlineSync.question("Enter the square width: "));
-let height = new Number(readlineSync.question("Enter the square height: "));
-
-function calcSurface(width, height){
-  return width * height;
+function rand10(){
+  return Math.floor(Math.random() * 11);
 }
 
-console.log(calcSurface(width, height));
+console.log(rand10());
