@@ -1,4 +1,10 @@
-let arr = [100, 101, 102];
+const readlineSync = require("readline-sync");
 
-console.log(Math.max(arr[0],arr[1],arr[2]));
-console.log(Math.min(arr[0], arr[1],arr[2]));
+let width = new Number(readlineSync.question("Enter the square width: "));
+let height = new Number(readlineSync.question("Enter the square height: "));
+
+function calcSurface(width, height){
+  return width * height;
+}
+
+console.log(calcSurface(width, height));
