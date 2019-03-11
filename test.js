@@ -1,16 +1,20 @@
 const readlineSync = require("readline-sync");
 
-let n = new Number(readlineSync.question("Enter a number: "));
+let myObject = {
 
-function factorialize(num) {
-  if (num < 0)
-        return -1;
-  else if (num == 0)
-      return 1;
-  else {
-      return (num * factorialize(num - 1));
-  }
+  name: "",
+
+  year: "",
+
+  cast: "",
+};
+
+function askTvSerie() {
+
+  myObject.name = (readlineSync.question("Tv serie: "));
+  myObject.year = (readlineSync.question("Production year: "));
+  myObject.cast = (readlineSync.question("Cast members: "));
+
+return myObject
 }
-factorialize(5);
-
-console.log(factorialize(n))
+console.log(askTvSerie());
