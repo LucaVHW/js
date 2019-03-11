@@ -1,16 +1,5 @@
-const readlineSync = require("readline-sync");
-
-let n = new Number(readlineSync.question("Enter a number: "));
-let array = []
-
-function multiRand(n){
-  for (i = 0; i < n; i++) {
-  array.push(Math.floor(Math.random() * 11));
-}
-  return array;
+function calcDistance(x1, y1, x2, y2){
+  return Math.hypot(x1-x2, y1-y2);
 }
 
-console.log("Generated array: " + multiRand(n));
-console.log("Average in array: " + n/array.length);
-console.log("Minimum in array: " + Math.min(...array));
-console.log("Maximum in array: " + Math.max(...array));
+console.log(calcDistance(-2, 2, 2, -2));
