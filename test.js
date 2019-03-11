@@ -1,5 +1,16 @@
-function calcDistance(x1, y1, x2, y2){
-  return Math.hypot(x1-x2, y1-y2);
-}
+const readlineSync = require("readline-sync");
 
-console.log(calcDistance(-2, 2, 2, -2));
+let n = new Number(readlineSync.question("Enter a number: "));
+
+function factorialize(num) {
+  if (num < 0)
+        return -1;
+  else if (num == 0)
+      return 1;
+  else {
+      return (num * factorialize(num - 1));
+  }
+}
+factorialize(5);
+
+console.log(factorialize(n))
