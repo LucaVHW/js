@@ -1,26 +1,37 @@
-const readlineSync = require("readline-sync");
+class Circle {
+  constructor(xPos, yPos, rad) {
+    this.yPos = yPos;
+    this.xPos = xPos;
+    this.rad = rad;
+  }
+  get yPosition() {
+    return this.yPos[0];
+  }
+  set yPosition(val) {
+    this.yPos[0] = val;
+  }
+  get xPosition() {
+    return this.xPos[0];
+  }
+  set xPosition(val) {
+    this.xPos[0] = val;
+  }
+  get radius() {
+    return this.rad[0];
+  }
+  set radius(val) {
+    this.rad[0] = val;
+  }
+  surface() {
+    return this.rad * this.rad * Math.PI;
+  }
+}
 
-let myObject = {
+let circle = new Circle(1, 1, 10);
 
-  name: "",
+circle.yPos = 5;
+circle.xPos = 5;
+circle.rad = 20;
+circle.surface();
 
-  year: "",
-
-  cast: "",
-};
-
-function askTvSerie() {
-
-  myObject.name = (readlineSync.question("Tv serie: "));
-  myObject.year = (readlineSync.question("Production year: "));
-  myObject.cast = (readlineSync.question("Cast members: "));
-
-return randomizeCast(myObject)
-};
-
-function randomizeCast(tvSerie) {
-
-  return myObject["cast"].split(' ').sort(function(){return 0.5-Math.random()}).join(' ');
-
-};
-console.log(askTvSerie());
+console.log(circle.surface());
