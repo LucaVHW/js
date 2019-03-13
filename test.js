@@ -1,37 +1,28 @@
-class Circle {
-  constructor(xPos, yPos, rad) {
-    this.yPos = yPos;
-    this.xPos = xPos;
-    this.rad = rad;
+class Rectangle {
+  constructor(x, y, width, length) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.length = length;
   }
-  get yPosition() {
-    return this.yPos[0];
-  }
-  set yPosition(val) {
-    this.yPos[0] = val;
-  }
-  get xPosition() {
-    return this.xPos[0];
-  }
-  set xPosition(val) {
-    this.xPos[0] = val;
-  }
-  get radius() {
-    return this.rad[0];
-  }
-  set radius(val) {
-    this.rad[0] = val;
-  }
-  surface() {
-    return this.rad * this.rad * Math.PI;
+  calcArea() {
+    return this.height * this.width;
   }
 }
 
-let circle = new Circle(1, 1, 10);
+  let rect1 = new Rectangle(5, 5, 50, 50)
+  let rect2 = new Rectangle(20, 10, 10, 10)
 
-circle.yPos = 5;
-circle.xPos = 5;
-circle.rad = 20;
-circle.surface();
+  function collision(rec1, rec2) {
+    if (rec1.x < rec2.x + rec2.width &&
+    rec1.x + rec1.width > rec2.x &&
+    rec1.y < rec1.y + rec2.height &&
+    rec1.y + rec1.height > rec2.y) {
+      return "true";
+    }
+    else {
+      return "false";
+    }
+  }
 
-console.log(circle.surface());
+  console.log(collision(rect1, rect2));
