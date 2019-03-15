@@ -1,3 +1,5 @@
+let rectangles = [];
+
 class Rectangle {
   constructor(x, y, width, length) {
     this.x = x;
@@ -5,13 +7,23 @@ class Rectangle {
     this.width = width;
     this.length = length;
   }
-  calcArea() {
-    return this.height * this.width;
+}
+
+function createRectangles(){
+  for (let i = 0; i <= 1000; ++i) {
+    rectangles[i] = new Rectangle(random(), random(), random(), random());
   }
 }
 
-  let rect1 = new Rectangle(5, 5, 50, 50)
-  let rect2 = new Rectangle(20, 10, 10, 10)
+function random() {
+  return Math.floor(Math.random() * 101);
+}
+
+createRectangles();
+
+rectangles.forEach(function(element) {
+  console.log(element);
+});
 
   function collision(rec1, rec2) {
     if (rec1.x < rec2.x + rec2.width &&
@@ -24,5 +36,3 @@ class Rectangle {
       return "false";
     }
   }
-
-  console.log(collision(rect1, rect2));
